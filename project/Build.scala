@@ -7,12 +7,15 @@ object Settings {
   val crossBuildScalaVersions = Seq("2.10.4", "2.11.2")
   val buildVersion      = "0.9.0-SNAPSHOT"
 
+  val ovoSnapshots = "Ovotech Nexus Repo Snapshots" at "http://nexus.ovotech.org.uk:8081/nexus/content/repositories/snapshots/";
+
   val buildSettings = Defaults.defaultSettings ++
                       Seq (organization  := buildOrganization,
                            scalaVersion  := buildScalaVersion,
                            version       := buildVersion,
                            scalacOptions ++= Seq("-deprecation", "-unchecked", "-encoding", "utf8"),
-                           publishTo     := Some(Resolver.file("file",  new File("deploy-repo"))))
+                           publishTo     := Some(ovoSnapshots),
+                           credentials   += Credentials(Path.userHome / ".ivy2" / ".credentials"))
 }
 
 object Dependencies {
