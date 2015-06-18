@@ -3,6 +3,10 @@ xsbt-cucumber-plugin
 
 An [sbt 0.13.0](https://github.com/harrah/xsbt/wiki) plugin for running [Cucumber](http://cukes.info) features.
 
+This repository is a fork of gsood/xsbt-cucumber-plugin, which itself is a fork of skipoleschris/xsbt-cucumber-plugin.
+The first fork is to upgrade from scala 2.10 to 2.11
+The second fork is so that we can publish to our nexus repository as the forked jars are not available publically
+
 ## Overview ##
 Provides the ability to run Cucumber-jvm within the SBT environment. Originally based on the [cuke4duke-sbt-plugin](https://github.com/rubbish/cuke4duke-sbt-plugin) by rubbish and my original implementation for SBT 0.7.x. Specifics for this release:
 
